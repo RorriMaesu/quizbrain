@@ -7,8 +7,6 @@ const startButton = document.getElementById("start-button");
 const categorySelect = document.getElementById("category-select");
 const missesElement = document.getElementById("misses");
 
-
-
 let currentQuestion;
 let questions = [];
 let timerInterval;
@@ -20,6 +18,10 @@ function startGame() {
     document.getElementById("game-elements").style.display = "block";
     loadQuestionsByCategory();
     playBackgroundMusic();
+    
+    // Always reset the timer after starting a new game
+    resetTimer();
+    getNextQuestion();  // Fetch the first question
 }
 
 function playBackgroundMusic() {
@@ -41,7 +43,7 @@ function getNextQuestion() {
         currentQuestion = questions.shift();
         askedQuestions.add(currentQuestion.question);
         questionElement.textContent = currentQuestion.question;
-        resetTimer();
+        // Remove the resetTimer call from here
     } else {
         let currentScore = parseInt(scoreElement.textContent.split(":")[1].trim());
         if (currentScore === 10) {
@@ -55,24 +57,26 @@ function getNextQuestion() {
 function checkAnswer(userAnswer) {
     if (userAnswer === currentQuestion.correct_answer) {
         updateScore();
+        resetTimer();  // Reset the timer only for correct answers
+        getNextQuestion();  // Fetch the next question for correct answers
     } else {
         incorrectAnswers++;
-        updateMisses();
+        console.log("Incorrect answer count:", incorrectAnswers);
+        updateMisses();  // Update the missed tally for incorrect answers
         if (incorrectAnswers === 5) {
+            console.log("Incorrect answers reached 5. Game over condition met.");
             playGameOverSound();
-            setTimeout(() => {
-                endGame("You have reached 5 incorrect answers, you lose!");
-            }, 500); // Delay the game over message by half a second to ensure the sound plays.
+            endGame("You have reached 5 incorrect answers, you lose!");
             return;
+        } else {
+            getNextQuestion();  // Fetch the next question for incorrect answers without resetting the timer
         }
     }
-    getNextQuestion();
 }
 
 function updateMisses() {
     missesElement.textContent = `Misses: ${incorrectAnswers}`;
 }
-
 
 function updateScore() {
     let currentScore = parseInt(scoreElement.textContent.split(":")[1].trim());
@@ -94,7 +98,6 @@ function playGameOverSound() {
     });
 }
 
-
 function resetTimer() {
     clearInterval(timerInterval);
     timerInterval = setInterval(updateTimer, 1000);
@@ -107,7 +110,6 @@ function updateTimer() {
         timerText.textContent = `Time Left: ${timeLeft}`;
         timeLeft--;
         console.log("Time left:", timeLeft);
-
     } else {
         console.log("Time ran out. Game over condition met.");
         playGameOverSound();
@@ -121,7 +123,6 @@ function endGame(message) {
     alert(message);
     window.location.reload();
 }
-
 
 function stopBackgroundMusic() {
     const backgroundMusic = document.getElementById("background-music");

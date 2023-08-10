@@ -1,11 +1,11 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 import random
 import json
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=".", static_url_path="")
 app.config['SECRET_KEY'] = 'key1'
 
-# Load questions from question data files
 def load_questions():
     categories = [
         "Python", "Movies and TV Shows", "History", "Geography",
@@ -32,7 +32,7 @@ def get_random_questions_from_data(data, num_questions=5):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory(os.path.abspath("."), "index.html")
 
 @app.route('/get_questions')
 def get_questions():
