@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2EC4B6;
+    background-image: url('/static/trivia_border.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#logo {
+    display: block;
+    max-width: 70%;
+    margin: 20px auto;
+}
+
+#misses {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    font-size: 28px;
+    color: #2EC4B6;
+}
+
+.game {
+    margin-top: 20px;
+}
+
+.question {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.timer {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.score {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-size: cover;
+    transition: background-image 0.2s;
+}
+
+.true {
+    background-image: url('/static/true_unclicked.png');
+}
+
+.false {
+    background-image: url('/static/false_unclicked.png');
+}
+
+.true:active {
+    background-image: url('/static/true_clicked.png');
+}
+
+.false:active {
+    background-image: url('/static/false_clicked.png');
+}
