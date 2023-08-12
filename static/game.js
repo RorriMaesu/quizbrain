@@ -10,7 +10,7 @@ const missesElement = document.getElementById("misses");
 let currentQuestion;
 let questions = [];
 let timerInterval;
-let timeLeft = 10;
+let timeLeft = 18;
 let incorrectAnswers = 0;
 let askedQuestions = new Set();
 
@@ -46,8 +46,8 @@ function getNextQuestion() {
         // Remove the resetTimer call from here
     } else {
         let currentScore = parseInt(scoreElement.textContent.split(":")[1].trim());
-        if (currentScore === 10) {
-            endGame("Congratulations, you answered 10 questions correctly. You win!");
+        if (currentScore === 30) {
+            endGame("Congratulations, you answered 30 questions correctly. You may not be very attractive, but YOU WIN!");
         } else {
             loadQuestionsByCategory();
         }
@@ -57,7 +57,9 @@ function getNextQuestion() {
 function checkAnswer(userAnswer) {
     if (userAnswer === currentQuestion.correct_answer) {
         updateScore();
-        resetTimer();  // Reset the timer only for correct answers
+        // Add 3 seconds to the timer for correct answers
+        timeLeft += 3; 
+        updateTimer(); // Update the timer display after adding time
         getNextQuestion();  // Fetch the next question for correct answers
     } else {
         incorrectAnswers++;
@@ -66,12 +68,13 @@ function checkAnswer(userAnswer) {
         if (incorrectAnswers === 5) {
             console.log("Incorrect answers reached 5. Game over condition met.");
             playGameOverSound();
-            endGame("You have reached 5 incorrect answers, you lose!");
+            endGame("You have reached 5 incorrect answers. I strongly suggest going back to school.");
             return;
         } else {
             getNextQuestion();  // Fetch the next question for incorrect answers without resetting the timer
         }
     }
+
 }
 
 function updateMisses() {
@@ -101,7 +104,7 @@ function playGameOverSound() {
 function resetTimer() {
     clearInterval(timerInterval);
     timerInterval = setInterval(updateTimer, 1000);
-    timeLeft = 10;
+    timeLeft = 18;
     updateTimer();
 }
 
@@ -113,7 +116,7 @@ function updateTimer() {
     } else {
         console.log("Time ran out. Game over condition met.");
         playGameOverSound();
-        endGame(`You ran out of time after answering ${parseInt(scoreElement.textContent.split(":")[1].trim())} questions correctly. You lose!`);
+        endGame(`Out of time! You answered ${parseInt(scoreElement.textContent.split(":")[1].trim())} questions correctly.`);
     }
 }
 

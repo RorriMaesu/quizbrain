@@ -1,17 +1,17 @@
-Here is index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
-    <link rel="stylesheet" href="/static/styles.css"> <!-- Note the leading / before static -->
+    <link rel="stylesheet" href="static/styles.css"> <!-- Note the leading / before static -->
 </head>
 <body>
     <div class="container">
-        <img id="logo" src="/static/quizbrain_logo.png" alt="QuizBrain Logo">
+        <img id="logo" src="static/quizbrain_logo.png" alt="QuizBrain Logo">
         <select id="category-select">
             <option value="" disabled selected>Select Category</option>
+            <option value="Random">Random</option>
             <option value="Python">Python</option>
             <option value="Movies and TV Shows">Movies and TV Shows</option>
             <option value="History">History</option>
@@ -24,7 +24,7 @@ Here is index.html
         <button id="start-button">Start Game</button>
         <div id="game-elements" style="display: none;">
             <div id="misses">Misses: 0</div>
-            <div id="timer">Time Left: 10</div>
+            <div id="timer">Time Left: 18</div>
             <div id="score">Score: 0</div>
             <p id="question"></p>
             <div class="button-container">
@@ -33,12 +33,12 @@ Here is index.html
             </div>
         </div>
     </div>
-    <script src="/static/game.js" defer></script> <!-- Note the leading / before static -->
+    <script src="static/game.js" defer></script> <!-- Note the leading / before static -->
     <audio id="background-music" loop autoplay>
-        <source src="/static/quiz_brain_music.wav" type="audio/wav">
+        <source src="static/quiz_brain_music.wav" type="audio/wav">
     </audio>
     <audio id="game-over-sound" preload="auto">
-        <source src="/static/game_over.wav" type="audio/wav">
+        <source src="static/game_over.wav" type="audio/wav">
     </audio>
 </body>
 </html>

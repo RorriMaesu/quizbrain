@@ -44,7 +44,9 @@ def get_questions():
     else:
         asked_questions = []
 
-    if selected_category:
+    if selected_category == "Random":
+        question_data = load_questions()
+    elif selected_category:
         question_data = load_questions_by_category(selected_category)
     else:
         question_data = load_questions()
@@ -61,6 +63,7 @@ def get_questions():
         for question in random_questions
     ]
     return jsonify(questions=formatted_questions)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

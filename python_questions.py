@@ -164,5 +164,242 @@ question_data = [
     {
         "question": "Python allows the use of nested functions or functions defined inside other functions.",
         "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the 'global' keyword inside a function is used to refer to a variable from the global scope.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'pass' keyword can be used as a placeholder for an empty function or loop.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'eval()' function in Python evaluates a string as Python code.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the '0' integer value is considered as 'True'.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "Python list indices start at 1.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "In Python, the '==' operator compares the values of both the operands and checks for value equality.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python 3.7 and later, the 'dictionary' data type is an ordered collection of data in key:value pair form.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The built-in function 'dir()' in Python returns a sorted list of strings containing the names defined by a module.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, 'List' is a mutable data type, meaning data can be altered even after its creation.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, a function can be assigned to a variable.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'set' data type allows for duplicate values.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "Python supports the use of 'and', 'or', and 'not' as bitwise operators.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "In Python, 'for' loops can also have an 'else' block which executes when the loop completes its iteration.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'list' data type provides a method named 'remove()' which is used to delete the first occurrence of value mentioned in its arguments.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'os' module in Python provides methods to remove files and directories.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, 'tuples' are similar to 'lists' in terms of indexing, nested objects, and iteration.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'dictionary' data type is similar to 'list', but instead of integer indexes, it uses unique keys.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'enumerate()' function takes a collection (e.g. a tuple) and returns it as an enumerate object.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'while' loop is used to iterate over a block of code as long as the test expression (condition) is true.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the 'filter()' method constructs an iterator from elements of an iterable for which a function returns true.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The expression '1 + 2 + '3' + 4' in Python will result in '333'.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "In Python, the 'map()' function applies a function to all the items in an input list.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'bytearray()' method in Python returns an array of given bytes.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the 'def' keyword is used to declare a lambda function.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "Python's 'float()' method is used to return a floating point number from a number or a string.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, 'None' is a special constant that represents the absence of a value or a null value.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'getattr()' method is used to return the value of a named attribute of an object.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'print()' function in Python 3 has an argument named 'sep' which can be used to separate the output values.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, 'lists' and 'tuples' are both immutable data types.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "In Python, '2 + 2 == 5' returns False.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'issubclass()' built-in function in Python checks if a class is a subclass of a class.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'hex()' function in Python is used to convert an integer to a hexadecimal string.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'tuple' is an immutable list.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'isinstance()' function in Python checks if an object is an instance of a class.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'open()' function is used to open a file and returns it as a file object.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, a multi-line string can be denoted using triple quotes, either ''' or \".\"",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'input()' function always reads input as a string.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the 'round()' function returns the rounded version of a specified number, with a specified number of decimals.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the 'with' keyword is used primarily for context management, such as resource handling (e.g., file handling).",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'yield' keyword is used to define a generator function.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'ord()' function in Python returns an integer representing the Unicode character.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'dir()' function in Python tries to return a list of valid attributes of the object.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'enumerate()' function in Python returns both the index and the value of items in an iterable.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the '+' operator can be used to concatenate lists.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'filter()' function is used to filter the elements of an iterable based on a function.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'super()' function in Python is used to call a method from a parent class.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, a 'set' data type supports indexing.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "Python's 'map()' function applies a given function to all the items in the input list.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The 'global' keyword in Python allows you to modify a variable outside of the current scope.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, 'exec()' is a built-in function used for the dynamic execution of Python programs.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "The '__name__' attribute in Python returns the name of the current module.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, 'import *' imports all the methods and classes from a module.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'all()' function returns 'True' if all elements in the iterable are true.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, 'frozenset' is a mutable version of a set.",
+        "correct_answer": "False"
+    },
+    {
+        "question": "The 'bytes()' method in Python returns a bytes object which is an immutable version of the bytearray object.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the 'vars()' function returns the __dict__ attribute of an object.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'hash()' function returns the hash value of an object if it has one.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "In Python, the 'memoryview()' function returns a memory view object of the given argument.",
+        "correct_answer": "True"
+    },
+    {
+        "question": "Python's 'property()' function provides an interface to an attribute without invoking the underlying method.",
+        "correct_answer": "True"
     }
+
 ]
