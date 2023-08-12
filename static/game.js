@@ -68,14 +68,14 @@ function checkAnswer(userAnswer) {
         if (incorrectAnswers === 5) {
             console.log("Incorrect answers reached 5. Game over condition met.");
             playGameOverSound();
-            endGame("You have reached 5 incorrect answers. I strongly suggest going back to school.");
+            endGame("You have reached 5 incorrect answers, you lose!");
             return;
         } else {
             getNextQuestion();  // Fetch the next question for incorrect answers without resetting the timer
         }
     }
-
 }
+
 
 function updateMisses() {
     missesElement.textContent = `Misses: ${incorrectAnswers}`;
