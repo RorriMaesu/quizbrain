@@ -15,9 +15,14 @@
         
         {% for score in leaderboard.scores[:9] %}
         <div class="rank-image">
+            {% if loop.index == 1 %}
+            <!-- Added inline style for the first image to move it up by 5 pixels -->
+            <img src="/static/leaderboard_{{loop.index}}.png" alt="Rank {{loop.index}}" style="position:relative; top:-10px;">
+            {% else %}
             <img src="/static/leaderboard_{{loop.index}}.png" alt="Rank {{loop.index}}">
+            {% endif %}
             <div class="score-overlay">
-                <span>{{ score.name }}</span> | <span>{{ score.category }}</span> | <span class="score-text">{{ score.score }}</span>
+                <span class="player-name">{{ score.name }}</span> | <span class="player-category">{{ score.category }}</span> | <span class="score-text">{{ score.score }}</span>
             </div>
         </div>
         {% endfor %}
