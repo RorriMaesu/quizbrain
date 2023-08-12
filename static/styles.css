@@ -16,8 +16,8 @@ body {
 
 #logo {
     display: block;
-    max-width: 70%;
-    margin: 20px auto;
+    max-width: 27%;
+    margin: 10px auto;
 }
 
 #misses {
@@ -28,7 +28,7 @@ body {
 .container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding: 10px 10%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -90,4 +90,61 @@ body {
 
 .false:active {
     background-image: url('/static/false_clicked.png');
+}
+
+/* Leaderboard styles */
+#view-leaderboard-button {
+    margin-top: 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: #2EC4B6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#view-leaderboard-button:hover {
+    background-color: #199a94;
+}
+
+#leaderboard-page {
+    background-image: url('/static/leaderboard_bg.png');
+}
+
+/* Leaderboard rank images */
+.rank-image {
+    width: 300%; 
+    max-width: 600px; 
+    margin: 1px auto;  
+    position: relative;
+}
+
+.score-overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 24px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.score-overlay span {
+    margin: 0 10px;
+    padding: 0 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+}
+
+.score-text {
+    position: absolute;
+    right: -3%;
+}
+
+/* Specific adjustments for leaderboard_1 */
+body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay {
+    top: 30%;
 }

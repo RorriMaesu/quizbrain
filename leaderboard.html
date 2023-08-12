@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game Leaderboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body id="leaderboard-page" onload="playLeaderboardSound()">
+    <div class="container">
+        <img id="logo" src="/static/quizbrain_logo.png" alt="QuizBrain Logo">
+        <h2 class="header">High Score Leaderboard</h2>
+        
+        {% for score in leaderboard.scores[:9] %}
+        <div class="rank-image">
+            <img src="/static/leaderboard_{{loop.index}}.png" alt="Rank {{loop.index}}">
+            <div class="score-overlay">
+                <span>{{ score.name }}</span> | <span>{{ score.category }}</span> | <span class="score-text">{{ score.score }}</span>
+            </div>
+        </div>
+        {% endfor %}
+
+        <button id="view-leaderboard-button" onclick="window.location.href='/'">Return to Game</button>
+    </div>
+    <script src="/static/game.js" defer></script>
+    <script>
+        function playLeaderboardSound() {
+            const leaderboardSound = document.getElementById("leaderboard-sound");
+            leaderboardSound.play();
+        }
+    </script>
+    <audio id="leaderboard-sound" loop>
+        <source src="/static/leaderboard_sound.wav" type="audio/wav">
+    </audio>
+</body>
+
+</html>

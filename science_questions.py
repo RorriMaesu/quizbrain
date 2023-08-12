@@ -1,5 +1,4 @@
 # science_questions.py
-
 question_data = [
     
     {

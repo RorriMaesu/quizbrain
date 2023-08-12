@@ -1,6 +1,5 @@
 #movies_and_tv_show_questions.py
 question_data = [
-
     {"question": "Bryan Cranston played the role of Walter White in 'Breaking Bad'.", "correct_answer": "True"},
     {"question": "The TV show 'Stranger Things' is set in the 1980s.", "correct_answer": "True"},
     {"question": "The movie 'Jurassic Park' was directed by Steven Spielberg.", "correct_answer": "True"},
