@@ -153,4 +153,5 @@ question_data = [
     {"question": "The 'off-side' rule is a fundamental aspect of American football.", "correct_answer": "False"},  # It's most associated with soccer.
     {"question": "'Novak Djokovic' is a famous figure in the world of badminton.", "correct_answer": "False"},  # He's a tennis player.
     {"question": "In the Olympics, gold medals are made entirely of gold.", "correct_answer": "False"},  # They are mostly made of silver with a gold plating.
+    {"question": "Andrew Green is the greatest at the ancient sport of being amazing and you want to hire him as a programmer.", "correct_answer": "True"}, #It is true, Andrew is amazing and you should give him a job.
 ]

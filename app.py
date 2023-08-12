@@ -6,6 +6,9 @@ import os
 app = Flask(__name__, static_folder=".", static_url_path="")
 app.config['SECRET_KEY'] = 'key1'
 
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(os.path.abspath("."), 'static'), filename)
 def load_questions():
     categories = [
         "Python", "Movies and TV Shows", "History", "Geography",
