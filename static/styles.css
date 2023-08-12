@@ -123,7 +123,7 @@ body {
 
 .score-overlay {
     position: absolute;
-    top: 33%;
+    top: 27%;
     left: 0;
     right: 0;
     transform: translateY(12%) translateX(-6%); 
@@ -146,7 +146,7 @@ body {
 
 /* Specific adjustments for leaderboard_1 */
 body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay {
-    transform: translateY(-10%) translateX(-2%);
+    transform: translateY(-1%) translateX(-2%);
 }
 
 body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .player-name,
@@ -158,5 +158,5 @@ body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .playe
 
 body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .score-text {
     display: inline-block; 
-    margin-top: -5px;
+    margin-top: -1px;
 }
