@@ -81,7 +81,11 @@ def save_leaderboard(data):
 @app.route('/leaderboard')
 def leaderboard():
     data = load_leaderboard()
+    for score in data.get("scores", []):
+        if score["category"] == "Movies and TV Shows":
+            score["category"] = "TV"
     return render_template("leaderboard.html", leaderboard=data)
+
 
 @app.route('/update_leaderboard', methods=['POST'])
 def update_leaderboard():

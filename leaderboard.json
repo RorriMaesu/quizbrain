@@ -51,6 +51,11 @@
             "category": "Python"
         },
         {
+            "name": "Kyle",
+            "score": 15,
+            "category": "Movies and TV Shows"
+        },
+        {
             "name": "Anonymous",
             "score": 12,
             "category": "Random"

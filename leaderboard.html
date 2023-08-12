@@ -22,7 +22,7 @@
             <img src="/static/leaderboard_{{loop.index}}.png" alt="Rank {{loop.index}}">
             {% endif %}
             <div class="score-overlay">
-                <span class="player-name">{{ score.name }}</span> | <span class="player-category">{{ score.category }}</span> | <span class="score-text">{{ score.score }}</span>
+                <span class="player-name">{{ score.name }}</span><span class="player-category">{{ score.category }}</span><span class="score-text">{{ score.score }}</span>
             </div>
         </div>
         {% endfor %}
