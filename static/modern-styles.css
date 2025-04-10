@@ -357,20 +357,20 @@ button:active {
 
 .true {
   background-color: var(--success);
-  background-image: url('true_unclicked.png');
+  background-image: url('/static/true_unclicked.png');
 }
 
 .false {
   background-color: var(--error);
-  background-image: url('false_unclicked.png');
+  background-image: url('/static/false_unclicked.png');
 }
 
 .true:active {
-  background-image: url('true_clicked.png');
+  background-image: url('/static/true_clicked.png');
 }
 
 .false:active {
-  background-image: url('false_clicked.png');
+  background-image: url('/static/false_clicked.png');
 }
 
 /* Leaderboard styles */

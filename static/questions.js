@@ -1793,42 +1793,57 @@ const defaultLeaderboard = {
         {
             "name": "Andrew",
             "score": 23,
-            "category": "Python"
+            "category": "Movies and TV Shows"
+        },
+        {
+            "name": "Andrew",
+            "score": 22,
+            "category": "History"
+        },
+        {
+            "name": "Andrew",
+            "score": 21,
+            "category": "Geography"
+        },
+        {
+            "name": "Andrew",
+            "score": 20,
+            "category": "Pop Culture"
         },
         {
             "name": "Andrew",
             "score": 19,
-            "category": "Python"
-        },
-        {
-            "name": "Anonymous",
-            "score": 18,
-            "category": "Python"
+            "category": "Sports"
         },
         {
             "name": "Andrew",
             "score": 18,
-            "category": "Python"
+            "category": "Science"
         },
         {
             "name": "Andrew",
             "score": 17,
+            "category": "Math"
+        },
+        {
+            "name": "Andrew",
+            "score": 16,
+            "category": "Random"
+        },
+        {
+            "name": "Anonymous",
+            "score": 15,
             "category": "Python"
         },
         {
             "name": "Anonymous",
-            "score": 16,
-            "category": "Python"
+            "score": 14,
+            "category": "Movies and TV Shows"
         },
         {
-            "name": "Andrew",
-            "score": 16,
-            "category": "Python"
-        },
-        {
-            "name": "Andrew",
-            "score": 15,
-            "category": "Random"
+            "name": "Anonymous",
+            "score": 13,
+            "category": "History"
         }
     ]
 };
