@@ -1,0 +1,39 @@
+.leaderboard-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  justify-content: center;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  background: var(--neutral-200);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  font-size: 0.9rem;
+}
+
+.tab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.tab-button.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+body.dark-theme .tab-button {
+  background: #2d3436;
+  color: #f8f9fa;
+}
+
+body.dark-theme .tab-button.active {
+  background: var(--primary);
+}

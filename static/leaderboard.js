@@ -22,8 +22,8 @@ function displayLeaderboard() {
         leaderboardContainer.appendChild(loader);
     }
 
-    // Display top 9 scores
-    const topScores = leaderboard.scores.slice(0, 9);
+    // Display top 7 scores to fit on screen without scrolling
+    const topScores = leaderboard.scores.slice(0, 7);
 
     // Create a wrapper for the leaderboard entries
     const entriesWrapper = document.createElement('div');
