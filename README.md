@@ -71,13 +71,13 @@ QuizBrain was created by Andrew J. Green, a passionate developer who loves creat
 
 <div align="center">
   <p><strong>Game Interface</strong></p>
-  <img src="https://github.com/RorriMaesu/quizbrain/assets/screenshots/game.png" alt="Game Interface" width="600">
+  <img src="static/game.png" alt="Game Interface" width="600">
   <p><em>The sleek, modern game interface with true/false questions</em></p>
 
   <br>
 
   <p><strong>Leaderboard</strong></p>
-  <img src="https://github.com/RorriMaesu/quizbrain/assets/screenshots/leaderboard.png" alt="Leaderboard" width="600">
+  <img src="static/leaderboard.png" alt="Leaderboard" width="600">
   <p><em>The Hall of Fame showcasing top players</em></p>
 </div>
 
