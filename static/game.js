@@ -157,5 +157,5 @@ falseButton.addEventListener("click", () => checkAnswer("False"));
 startButton.addEventListener("click", startGame);
 leaderboardButton.addEventListener("click", function() {
     stopBackgroundMusic();
-    window.location.href = "leaderboard.html";
+    window.location.href = "/leaderboard";
 });

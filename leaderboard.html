@@ -7,6 +7,7 @@
     <title>QuizBrain | Leaderboard</title>
     <link rel="stylesheet" href="static/modern-styles.css">
     <link rel="stylesheet" href="static/leaderboard-tabs.css">
+    <link rel="stylesheet" href="static/category-dropdown.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="static/quizbrain_logo.png">
     <meta name="description" content="QuizBrain Leaderboard - See who's leading the pack in our premium trivia game.">
@@ -21,17 +22,43 @@
         <img id="logo" src="static/quizbrain_logo.png" alt="QuizBrain Logo">
         <h1 class="header">Hall of Fame</h1>
 
-        <div class="leaderboard-tabs">
-            <button class="tab-button active" data-filter="all">All Categories</button>
-            <button class="tab-button" data-filter="Python">Python</button>
-            <button class="tab-button" data-filter="Random">Random</button>
-            <button class="tab-button" data-filter="Movies and TV Shows">TV & Movies</button>
-            <button class="tab-button" data-filter="History">History</button>
-            <button class="tab-button" data-filter="Geography">Geography</button>
-            <button class="tab-button" data-filter="Pop Culture">Pop Culture</button>
-            <button class="tab-button" data-filter="Sports">Sports</button>
-            <button class="tab-button" data-filter="Science">Science</button>
-            <button class="tab-button" data-filter="Math">Mathematics</button>
+        <div class="category-dropdown">
+            <button class="dropdown-button">
+                <span>All Categories</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+                <div class="dropdown-item active" data-filter="all">
+                    <i class="fas fa-globe"></i> <span>All Categories</span>
+                </div>
+                <div class="dropdown-item" data-filter="Python">
+                    <i class="fab fa-python"></i> <span>Python</span>
+                </div>
+                <div class="dropdown-item" data-filter="Random">
+                    <i class="fas fa-random"></i> <span>Random</span>
+                </div>
+                <div class="dropdown-item" data-filter="Movies and TV Shows">
+                    <i class="fas fa-film"></i> <span>TV & Movies</span>
+                </div>
+                <div class="dropdown-item" data-filter="History">
+                    <i class="fas fa-landmark"></i> <span>History</span>
+                </div>
+                <div class="dropdown-item" data-filter="Geography">
+                    <i class="fas fa-map-marked-alt"></i> <span>Geography</span>
+                </div>
+                <div class="dropdown-item" data-filter="Pop Culture">
+                    <i class="fas fa-music"></i> <span>Pop Culture</span>
+                </div>
+                <div class="dropdown-item" data-filter="Sports">
+                    <i class="fas fa-basketball-ball"></i> <span>Sports</span>
+                </div>
+                <div class="dropdown-item" data-filter="Science">
+                    <i class="fas fa-atom"></i> <span>Science</span>
+                </div>
+                <div class="dropdown-item" data-filter="Math">
+                    <i class="fas fa-calculator"></i> <span>Mathematics</span>
+                </div>
+            </div>
         </div>
 
         <div id="leaderboard-container" class="fade-in">
@@ -39,7 +66,7 @@
             <div class="loader" id="leaderboard-loader"></div>
         </div>
 
-        <button id="view-leaderboard-button" onclick="window.location.href='index.html'">
+        <button id="view-leaderboard-button" onclick="window.location.href='/'">
             <i class="fas fa-arrow-left"></i> Return to Game
         </button>
     </div>
@@ -57,6 +84,7 @@
     <script src="static/questions.js" defer></script>
     <script src="static/leaderboard.js" defer></script>
     <script src="static/modern-script.js" defer></script>
+    <script src="static/category-dropdown.js" defer></script>
     <script>
         function playLeaderboardSound() {
             const leaderboardSound = document.getElementById("leaderboard-sound");
@@ -65,26 +93,7 @@
             });
         }
 
-        // Category filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-
-                    // Add active class to clicked button
-                    this.classList.add('active');
-
-                    // Get filter value
-                    const filter = this.getAttribute('data-filter');
-
-                    // Filter leaderboard entries
-                    filterLeaderboard(filter);
-                });
-            });
-        });
+        // Category filter functionality - Now handled by category-dropdown.js
 
         function filterLeaderboard(filter) {
             const entries = document.querySelectorAll('.rank-image');
