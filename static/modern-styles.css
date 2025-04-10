@@ -427,37 +427,37 @@ button:active {
     width: 95%;
     padding: 1.5rem;
   }
-  
+
   select, button {
     width: 100%;
     margin: 0.5rem 0;
   }
-  
+
   .game-info {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   #misses, #timer, #score {
     width: 100%;
   }
-  
+
   .button-container {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .button {
     width: 80%;
     margin-bottom: 1rem;
   }
-  
+
   .score-overlay {
     padding: 0 1rem;
     flex-direction: column;
     gap: 0.25rem;
   }
-  
+
   .score-overlay span {
     width: 100%;
     text-align: center;
@@ -596,6 +596,67 @@ audio {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* Buy Me a Coffee styling */
+.support-developer {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: var(--border-radius-lg);
+  animation: pulse 2s infinite;
+  transition: all var(--transition-normal);
+}
+
+.support-developer p {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.bmc-link {
+  display: inline-block;
+  transition: transform var(--transition-normal);
+}
+
+.bmc-link:hover {
+  transform: scale(1.05);
+}
+
+.bmc-image {
+  max-width: 200px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.bmc-image:hover {
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Strategic positioning for different screen sizes */
+@media (min-width: 768px) {
+  .support-developer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+    margin-top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .bmc-image {
+    max-width: 180px;
+  }
+}
+
+/* Show the support message after a user has played the game */
+.game-played .support-developer {
+  animation: fadeIn 0.5s ease forwards, pulse 2s infinite;
 }
 
 /* Dark mode toggle */
