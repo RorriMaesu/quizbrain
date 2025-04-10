@@ -1,6 +1,10 @@
 // Modern script for enhanced functionality
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if we're on GitHub Pages and add appropriate class to body
+    if (window.location.hostname.includes('github.io')) {
+        document.body.classList.add('github-pages');
+    }
     // Initialize theme toggle
     initThemeToggle();
 

@@ -374,6 +374,23 @@ button:active {
   background-image: url('/static/false_clicked.png');
 }
 
+/* GitHub Pages specific paths */
+body.github-pages .true {
+  background-image: url('/quizbrain/static/true_unclicked.png');
+}
+
+body.github-pages .false {
+  background-image: url('/quizbrain/static/false_unclicked.png');
+}
+
+body.github-pages .true:active {
+  background-image: url('/quizbrain/static/true_clicked.png');
+}
+
+body.github-pages .false:active {
+  background-image: url('/quizbrain/static/false_clicked.png');
+}
+
 /* Leaderboard styles */
 #leaderboard-page {
   background: linear-gradient(135deg, #6c5ce7, #a29bfe, #00cec9);
