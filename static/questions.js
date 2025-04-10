@@ -326,21 +326,23 @@ function getLeaderboard() {
 }
 
 function updateLeaderboard(name, score, category) {
-    if (name === "Anonymous") return;
-    
+    if (name === "Anonymous") {
+        return;
+    }
+
     const leaderboard = getLeaderboard();
     leaderboard.scores.push({
         name: name,
         score: score,
         category: category
     });
-    
+
     // Sort scores in descending order
     leaderboard.scores.sort((a, b) => b.score - a.score);
-    
+
     // Trim to top 30 scores
     leaderboard.scores = leaderboard.scores.slice(0, 30);
-    
+
     // Save back to localStorage
     localStorage.setItem('quizBrainLeaderboard', JSON.stringify(leaderboard));
 }
@@ -348,7 +350,8 @@ function updateLeaderboard(name, score, category) {
 // Helper function to get random questions
 function getRandomQuestions(category, askedQuestions = [], numQuestions = 5) {
     let questionPool = [];
-    
+    let resetTracking = false;
+
     if (category === "Random") {
         // Combine all categories
         Object.values(allQuestions).forEach(categoryQuestions => {
@@ -357,13 +360,23 @@ function getRandomQuestions(category, askedQuestions = [], numQuestions = 5) {
     } else {
         questionPool = allQuestions[category] || [];
     }
-    
+
     // Filter out already asked questions
-    questionPool = questionPool.filter(q => !askedQuestions.includes(q.question));
-    
+    let filteredPool = questionPool.filter(q => !askedQuestions.includes(q.question));
+
+    // If we've asked all questions in this category, reset tracking and use all questions
+    if (filteredPool.length === 0 && questionPool.length > 0) {
+        console.log("All questions in this category have been asked. Reusing questions.");
+        filteredPool = questionPool;
+        resetTracking = true;
+    }
+
     // Shuffle the questions
-    questionPool.sort(() => Math.random() - 0.5);
-    
-    // Return the requested number of questions
-    return questionPool.slice(0, numQuestions);
+    filteredPool.sort(() => Math.random() - 0.5);
+
+    // Return the requested number of questions and reset flag
+    return {
+        questions: filteredPool.slice(0, numQuestions),
+        resetTracking: resetTracking
+    };
 }

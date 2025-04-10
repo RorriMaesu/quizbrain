@@ -704,3 +704,32 @@ audio {
     transform: translateX(100px) rotate(360deg);
   }
 }
+
+/* Notification for question reuse */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  animation: notification-slide-in 0.3s ease-out forwards;
+  font-size: 0.9rem;
+  max-width: 90%;
+  text-align: center;
+}
+
+@keyframes notification-slide-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
