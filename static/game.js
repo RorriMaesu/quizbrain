@@ -157,5 +157,7 @@ falseButton.addEventListener("click", () => checkAnswer("False"));
 startButton.addEventListener("click", startGame);
 leaderboardButton.addEventListener("click", function() {
     stopBackgroundMusic();
-    window.location.href = "/leaderboard";
+    // Check if we're running on GitHub Pages or locally
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    window.location.href = isGitHubPages ? "leaderboard.html" : "/leaderboard";
 });
