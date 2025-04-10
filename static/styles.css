@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2EC4B6;
+    background-image: url('trivia_border.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#logo {
+    display: block;
+    max-width: 30%;
+    margin: 5px auto;
+}
+
+#misses {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 10%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    font-size: 28px;
+    color: #2EC4B6;
+}
+
+.game {
+    margin-top: 20px;
+}
+
+.question {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.timer {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.score {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 1px;
+    border: none;
+    border-radius: 5px;
+    background-size: cover;
+    transition: background-image 0.2s;
+}
+
+.true {
+    background-image: url('true_unclicked.png');
+}
+
+.false {
+    background-image: url('false_unclicked.png');
+}
+
+.true:active {
+    background-image: url('true_clicked.png');
+}
+
+.false:active {
+    background-image: url('false_clicked.png');
+}
+
+/* Leaderboard styles */
+#view-leaderboard-button {
+    margin-top: 1px;
+    padding: 12px 12px;
+    font-size: 16px;
+    background-color: #2EC4B6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#view-leaderboard-button:hover {
+    background-color: #199a94;
+}
+
+#leaderboard-page {
+    background-image: url('leaderboard_bg.png');
+}
+
+/* Leaderboard rank images */
+.rank-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 2px auto;
+    position: relative;
+}
+
+.score-overlay {
+    position: absolute;
+    top: 27%;
+    left: 0;
+    right: 0;
+    transform: translateY(12%) translateX(-6%);
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.score-overlay span {
+    margin: 0 20px;
+    padding: 20 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+}
+
+.score-text {
+    position: absolute;
+    right: -5%;
+}
+
+/* Specific adjustments for leaderboard_1 */
+body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay {
+    transform: translateY(-1%) translateX(-2%);
+}
+
+body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .player-name,
+body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .player-category {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .score-text {
+    display: inline-block;
+    margin-top: -1px;
+}
