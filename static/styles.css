@@ -8,7 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #2EC4B6;
-    background-image: url('/static/trivia_border.png');
+    background-image: url('trivia_border.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -77,19 +77,19 @@ body {
 }
 
 .true {
-    background-image: url('/static/true_unclicked.png');
+    background-image: url('true_unclicked.png');
 }
 
 .false {
-    background-image: url('/static/false_unclicked.png');
+    background-image: url('false_unclicked.png');
 }
 
 .true:active {
-    background-image: url('/static/true_clicked.png');
+    background-image: url('true_clicked.png');
 }
 
 .false:active {
-    background-image: url('/static/false_clicked.png');
+    background-image: url('false_clicked.png');
 }
 
 /* Leaderboard styles */
@@ -110,14 +110,14 @@ body {
 }
 
 #leaderboard-page {
-    background-image: url('/static/leaderboard_bg.png');
+    background-image: url('leaderboard_bg.png');
 }
 
 /* Leaderboard rank images */
 .rank-image {
-    width: 100%; 
-    max-width: 600px; 
-    margin: 2px auto;  
+    width: 100%;
+    max-width: 600px;
+    margin: 2px auto;
     position: relative;
 }
 
@@ -126,7 +126,7 @@ body {
     top: 27%;
     left: 0;
     right: 0;
-    transform: translateY(12%) translateX(-6%); 
+    transform: translateY(12%) translateX(-6%);
     font-size: 16px;
     text-align: center;
     white-space: nowrap;
@@ -152,11 +152,11 @@ body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay {
 body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .player-name,
 body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .player-category {
     display: inline-block;
-    margin-top: 5px; 
+    margin-top: 5px;
     margin-left: 10px;
 }
 
 body #leaderboard-page .container .rank-image:nth-child(1) .score-overlay .score-text {
-    display: inline-block; 
+    display: inline-block;
     margin-top: -1px;
 }

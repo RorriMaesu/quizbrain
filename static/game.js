@@ -25,15 +25,15 @@ function startGame() {
 
 function playBackgroundMusic() {
     const backgroundMusic = document.getElementById("background-music");
-    backgroundMusic.play();
+    backgroundMusic.play().catch(error => {
+        console.error("Error playing background music:", error);
+    });
 }
 
-async function loadQuestionsByCategory() {
+function loadQuestionsByCategory() {
     const category = categorySelect.value;
     const askedQuestionsArray = Array.from(askedQuestions);
-    const response = await fetch(`/get_questions?category=${category}&askedQuestions=${JSON.stringify(askedQuestionsArray)}`);
-    const data = await response.json();
-    questions = data.questions;
+    questions = getRandomQuestions(category, askedQuestionsArray, 5);
     getNextQuestion();
 }
 
@@ -117,23 +117,9 @@ function endGame(message) {
 
     let playerName = prompt("Enter your name:");
     if(playerName) {
-        fetch(`/update_leaderboard`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "category": category,
-                "name": playerName,
-                "score": currentScore
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if(data.status === "updated") {
-                alert("Leaderboard updated!");
-            }
-        });
+        // Update leaderboard in localStorage
+        updateLeaderboard(playerName, currentScore, category);
+        alert("Leaderboard updated!");
     }
 
     window.location.reload();
@@ -150,5 +136,5 @@ falseButton.addEventListener("click", () => checkAnswer("False"));
 startButton.addEventListener("click", startGame);
 leaderboardButton.addEventListener("click", function() {
     stopBackgroundMusic();
-    window.location.href = "/leaderboard";
+    window.location.href = "leaderboard.html";
 });

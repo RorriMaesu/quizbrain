@@ -5,39 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia Game Leaderboard</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 
 <body id="leaderboard-page" onload="playLeaderboardSound()">
     <div class="container">
-        <img id="logo" src="/static/quizbrain_logo.png" alt="QuizBrain Logo">
+        <img id="logo" src="static/quizbrain_logo.png" alt="QuizBrain Logo">
         <h2 class="header">High Score Leaderboard</h2>
-        
-        {% for score in leaderboard.scores[:9] %}
-        <div class="rank-image">
-            {% if loop.index == 1 %}
-            <!-- Added inline style for the first image to move it up by 5 pixels -->
-            <img src="/static/leaderboard_{{loop.index}}.png" alt="Rank {{loop.index}}" style="position:relative; top:-10px;">
-            {% else %}
-            <img src="/static/leaderboard_{{loop.index}}.png" alt="Rank {{loop.index}}">
-            {% endif %}
-            <div class="score-overlay">
-                <span class="player-name">{{ score.name }}</span><span class="player-category">{{ score.category }}</span><span class="score-text">{{ score.score }}</span>
-            </div>
-        </div>
-        {% endfor %}
 
-        <button id="view-leaderboard-button" onclick="window.location.href='/'">Return to Game</button>
+        <div id="leaderboard-container">
+            <!-- Leaderboard entries will be inserted here by JavaScript -->
+        </div>
+
+        <button id="view-leaderboard-button" onclick="window.location.href='index.html'">Return to Game</button>
     </div>
-    <script src="/static/game.js" defer></script>
+    <script src="static/questions.js" defer></script>
+    <script src="static/leaderboard.js" defer></script>
     <script>
         function playLeaderboardSound() {
             const leaderboardSound = document.getElementById("leaderboard-sound");
-            leaderboardSound.play();
+            leaderboardSound.play().catch(error => {
+                console.error("Error playing leaderboard sound:", error);
+            });
         }
     </script>
     <audio id="leaderboard-sound">  <!-- Removed the loop attribute here -->
-        <source src="/static/leaderboard_sound.wav" type="audio/wav">
+        <source src="static/leaderboard_sound.wav" type="audio/wav">
     </audio>
 </body>
 
