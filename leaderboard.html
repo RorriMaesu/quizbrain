@@ -17,7 +17,7 @@
             <!-- Leaderboard entries will be inserted here by JavaScript -->
         </div>
 
-        <button id="view-leaderboard-button" onclick="window.location.href='index.html'">Return to Game</button>
+        <button id="view-leaderboard-button" onclick="returnToGame()">Return to Game</button>
     </div>
     <script src="static/questions.js" defer></script>
     <script src="static/leaderboard.js" defer></script>
@@ -27,6 +27,12 @@
             leaderboardSound.play().catch(error => {
                 console.error("Error playing leaderboard sound:", error);
             });
+        }
+
+        function returnToGame() {
+            // Check if we're on GitHub Pages (which uses the /quizbrain/ path)
+            const isGitHubPages = window.location.hostname.includes('github.io');
+            window.location.href = isGitHubPages ? "/quizbrain/index.html" : "index.html";
         }
     </script>
     <audio id="leaderboard-sound">  <!-- Removed the loop attribute here -->

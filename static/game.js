@@ -33,7 +33,28 @@ function playBackgroundMusic() {
 function loadQuestionsByCategory() {
     const category = categorySelect.value;
     const askedQuestionsArray = Array.from(askedQuestions);
-    questions = getRandomQuestions(category, askedQuestionsArray, 5);
+
+    // Get questions and reset flag
+    const result = getRandomQuestions(category, askedQuestionsArray, 5);
+    questions = result.questions;
+
+    // If we need to reset tracking (all questions were asked), clear the Set
+    if (result.resetTracking) {
+        // Show a notification to the user
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = 'All questions in this category have been asked. Starting over with shuffled questions!';
+        document.querySelector('.container').appendChild(notification);
+
+        // Remove the notification after 3 seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+
+        // Clear the tracking Set
+        askedQuestions.clear();
+    }
+
     getNextQuestion();
 }
 
@@ -136,5 +157,7 @@ falseButton.addEventListener("click", () => checkAnswer("False"));
 startButton.addEventListener("click", startGame);
 leaderboardButton.addEventListener("click", function() {
     stopBackgroundMusic();
-    window.location.href = "leaderboard.html";
+    // Check if we're on GitHub Pages (which uses the /quizbrain/ path)
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    window.location.href = isGitHubPages ? "/quizbrain/leaderboard.html" : "leaderboard.html";
 });
