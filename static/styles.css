@@ -14,6 +14,10 @@ body {
     background-position: center center;
 }
 
+body.github-pages {
+    background-image: url('/quizbrain/static/trivia_border.png');
+}
+
 #logo {
     display: block;
     max-width: 30%;
@@ -92,6 +96,25 @@ body {
     background-image: url('false_clicked.png');
 }
 
+/* GitHub Pages specific paths */
+@media screen {
+    body.github-pages .true {
+        background-image: url('/quizbrain/static/true_unclicked.png');
+    }
+
+    body.github-pages .false {
+        background-image: url('/quizbrain/static/false_unclicked.png');
+    }
+
+    body.github-pages .true:active {
+        background-image: url('/quizbrain/static/true_clicked.png');
+    }
+
+    body.github-pages .false:active {
+        background-image: url('/quizbrain/static/false_clicked.png');
+    }
+}
+
 /* Leaderboard styles */
 #view-leaderboard-button {
     margin-top: 1px;
@@ -111,6 +134,10 @@ body {
 
 #leaderboard-page {
     background-image: url('leaderboard_bg.png');
+}
+
+body.github-pages #leaderboard-page {
+    background-image: url('/quizbrain/static/leaderboard_bg.png');
 }
 
 /* Leaderboard rank images */

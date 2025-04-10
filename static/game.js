@@ -1,3 +1,8 @@
+// Check if we're on GitHub Pages and add appropriate class to body
+if (window.location.hostname.includes('github.io')) {
+    document.body.classList.add('github-pages');
+}
+
 const questionElement = document.getElementById("question");
 const trueButton = document.getElementById("true-button");
 const falseButton = document.getElementById("false-button");
