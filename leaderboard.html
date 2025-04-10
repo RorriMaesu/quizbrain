@@ -4,23 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia Game Leaderboard</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <title>QuizBrain | Leaderboard</title>
+    <link rel="stylesheet" href="static/modern-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="static/quizbrain_logo.png">
+    <meta name="description" content="QuizBrain Leaderboard - See who's leading the pack in our premium trivia game.">
 </head>
 
 <body id="leaderboard-page" onload="playLeaderboardSound()">
-    <div class="container">
-        <img id="logo" src="static/quizbrain_logo.png" alt="QuizBrain Logo">
-        <h2 class="header">High Score Leaderboard</h2>
+    <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
 
-        <div id="leaderboard-container">
-            <!-- Leaderboard entries will be inserted here by JavaScript -->
+    <div class="container fade-in">
+        <img id="logo" src="static/quizbrain_logo.png" alt="QuizBrain Logo">
+        <h1 class="header">Hall of Fame</h1>
+
+        <div class="leaderboard-tabs">
+            <button class="tab-button active" data-filter="all">All Categories</button>
+            <button class="tab-button" data-filter="Python">Python</button>
+            <button class="tab-button" data-filter="Random">Random</button>
+            <button class="tab-button" data-filter="History">History</button>
         </div>
 
-        <button id="view-leaderboard-button" onclick="window.location.href='index.html'">Return to Game</button>
+        <div id="leaderboard-container" class="fade-in">
+            <!-- Leaderboard entries will be inserted here by JavaScript -->
+            <div class="loader" id="leaderboard-loader"></div>
+        </div>
+
+        <button id="view-leaderboard-button" onclick="window.location.href='index.html'">
+            <i class="fas fa-arrow-left"></i> Return to Game
+        </button>
     </div>
+
+    <div class="footer">
+        <p>© 2023 QuizBrain | Designed by <a href="#">Andrew J. Green</a></p>
+    </div>
+
     <script src="static/questions.js" defer></script>
     <script src="static/leaderboard.js" defer></script>
+    <script src="static/modern-script.js" defer></script>
     <script>
         function playLeaderboardSound() {
             const leaderboardSound = document.getElementById("leaderboard-sound");
@@ -28,8 +51,43 @@
                 console.error("Error playing leaderboard sound:", error);
             });
         }
+
+        // Category filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Get filter value
+                    const filter = this.getAttribute('data-filter');
+
+                    // Filter leaderboard entries
+                    filterLeaderboard(filter);
+                });
+            });
+        });
+
+        function filterLeaderboard(filter) {
+            const entries = document.querySelectorAll('.rank-image');
+
+            entries.forEach(entry => {
+                const category = entry.getAttribute('data-category');
+
+                if (filter === 'all' || category === filter) {
+                    entry.style.display = 'block';
+                } else {
+                    entry.style.display = 'none';
+                }
+            });
+        }
     </script>
-    <audio id="leaderboard-sound">  <!-- Removed the loop attribute here -->
+    <audio id="leaderboard-sound">
         <source src="static/leaderboard_sound.wav" type="audio/wav">
     </audio>
 </body>
