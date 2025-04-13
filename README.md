@@ -2,6 +2,8 @@
   <img src="static/quizbrain_logo.png" alt="QuizBrain Logo" width="200">
   <h1>QuizBrain</h1>
   <p>A premium, interactive trivia game with multiple categories</p>
+  <h2>Live Demo</h2>
+  <h2>https://rorrimaesu.github.io/quizbrain/</h2>
 
   <a href="https://github.com/rorrimaesu/quizbrain">
     <img src="https://img.shields.io/github/stars/rorrimaesu/quizbrain?style=social" alt="GitHub stars">
